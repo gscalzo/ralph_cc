@@ -30,17 +30,16 @@ Ralph solves the context window problem for large features by breaking work into
 
 ### 1. Install Skills Globally
 
-Copy the Ralph skills to your Claude Code agents directory:
+Copy the Ralph skills to your global Claude Code agents directory:
 
 ```bash
-# Create agents directory if it doesn't exist
-mkdir -p ~/.claude/agents
-
-# Copy skills from this repo
-cp /Users/giordanoscalzo/.claude/agents/prd.md ~/.claude/agents/
-cp /Users/giordanoscalzo/.claude/agents/ralph-converter.md ~/.claude/agents/
-cp /Users/giordanoscalzo/.claude/agents/ralph-run.md ~/.claude/agents/
+# From the ralph_cc repository root
+cp skills/prd.md ~/.claude/agents/
+cp skills/ralph-converter.md ~/.claude/agents/
+cp skills/ralph-run.md ~/.claude/agents/
 ```
+
+**Note:** Skills are global to Claude Code and work across all your projects.
 
 Verify installation:
 ```bash
@@ -53,8 +52,9 @@ ls ~/.claude/agents/
 Copy the hooks configuration to your project:
 
 ```bash
-# From your project root
-cp -r /path/to/ralph_cc/.claude/ .
+# From your project root (where you want to use Ralph)
+# Replace <ralph-repo-path> with the path to your cloned ralph_cc repository
+cp -r <ralph-repo-path>/.claude/ .
 ```
 
 This copies:
