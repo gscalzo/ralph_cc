@@ -791,4 +791,3 @@ Track quality over time:
 
 - [Claude Code Documentation](https://claude.com/claude-code/docs)
 - [Geoffrey Huntley's Ralph](https://ghuntley.com/ralph/)
-- [Interactive Flowchart](https://snarktank.github.io/ralph/)

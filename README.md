@@ -158,21 +158,6 @@ your-project/
 | `progress.txt` | Append-only learnings for future iterations |
 | `.claude/settings.json` | Hooks configuration |
 | `.claude/hooks/` | Validation and quality check scripts |
-| `flowchart/` | Interactive visualization of how Ralph works |
-
-## Flowchart
-
-[![Ralph Flowchart](ralph-flowchart.png)](https://snarktank.github.io/ralph/)
-
-**[View Interactive Flowchart](https://snarktank.github.io/ralph/)** - Click through to see each step with animations.
-
-The `flowchart/` directory contains the source code. To run locally:
-
-```bash
-cd flowchart
-npm install
-npm run dev
-```
 
 ## Critical Concepts
 
@@ -439,7 +424,6 @@ For complete technical documentation, see [TECHNICAL-GUIDE.md](TECHNICAL-GUIDE.m
 
 - [Claude Code Documentation](https://claude.com/claude-code/docs)
 - [Geoffrey Huntley's Ralph Pattern](https://ghuntley.com/ralph/)
-- [Interactive Flowchart](https://snarktank.github.io/ralph/)
 
 ## References
 

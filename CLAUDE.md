@@ -27,12 +27,6 @@ claude
 ## Commands
 
 ```bash
-# Run the flowchart dev server
-cd flowchart && npm run dev
-
-# Build the flowchart
-cd flowchart && npm run build
-
 # Check Ralph progress
 jq '.userStories[] | {id, title, passes}' prd.json
 
@@ -49,20 +43,6 @@ cat progress.txt
 - `.claude/hooks/` - Validation and quality check scripts
 - `prd.json` - Current task list (user stories with passes status)
 - `progress.txt` - Learnings log with Codebase Patterns section
-- `flowchart/` - Interactive React Flow diagram
-
-## Flowchart
-
-The `flowchart/` directory contains an interactive visualization built with React Flow. It's designed for presentations - click through to reveal each step with animations.
-
-**[View Live Demo](https://snarktank.github.io/ralph/)**
-
-To run locally:
-```bash
-cd flowchart
-npm install
-npm run dev
-```
 
 ## Core Patterns
 
@@ -225,4 +205,3 @@ npm test
 
 - [Claude Code Documentation](https://claude.com/claude-code/docs)
 - [Geoffrey Huntley's Ralph Pattern](https://ghuntley.com/ralph/)
-- [Interactive Flowchart](https://snarktank.github.io/ralph/)
