@@ -70,7 +70,7 @@ chmod +x .claude/hooks/*.sh
 
 ### Step 1: Create a PRD
 
-Start Claude Code and use the `/prd` skill:
+Start Claude Code and use the `@prd` agent:
 
 ```bash
 claude
@@ -78,20 +78,20 @@ claude
 
 Then type:
 ```
-/prd create a task priority system with high/medium/low levels, visual indicators, and filtering
+@prd create a task priority system with high/medium/low levels, visual indicators, and filtering
 ```
 
-The skill will:
+The agent will:
 1. Ask clarifying questions (answer with "1A, 2B, 3C")
 2. Generate a structured PRD
 3. Save to `tasks/prd-[feature-name].md`
 
 ### Step 2: Convert PRD to prd.json
 
-Use the `/ralph-converter` skill:
+Use the `@ralph-converter` agent:
 
 ```
-/ralph-converter convert tasks/prd-task-priority.md to prd.json
+@ralph-converter convert tasks/prd-task-priority.md to prd.json
 ```
 
 This creates `prd.json` with:
@@ -102,10 +102,10 @@ This creates `prd.json` with:
 
 ### Step 3: Run Ralph
 
-Use the `/ralph-run` skill to start autonomous execution:
+Use the `@ralph-run` agent to start autonomous execution:
 
 ```
-/ralph-run
+@ralph-run
 ```
 
 Ralph will now run autonomously:
@@ -170,7 +170,7 @@ Unlike manual workflows, Ralph uses **self-continuation**:
 - Continues until all stories have `passes: true`
 - Outputs `<promise>COMPLETE</promise>` when done
 
-This is achieved through explicit instructions in the `/ralph-run` skill.
+This is achieved through explicit instructions in the `@ralph-run` agent.
 
 ### Small Tasks
 
@@ -313,8 +313,8 @@ Ralph automatically archives previous runs when you start a new feature (differe
 **Problem:** Claude waits for input instead of continuing
 
 **Solution:**
-- Check `/ralph-run` skill has self-continuation instructions
-- Skill should say "IMMEDIATELY continue to next story"
+- Check `@ralph-run` agent has self-continuation instructions
+- Agent should say "IMMEDIATELY continue to next story"
 - Restart Ralph session
 
 ### Hooks Not Firing

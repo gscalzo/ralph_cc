@@ -8,7 +8,7 @@ This is the complete technical guide for Ralph, an autonomous AI agent system fo
 
 Ralph consists of three main components:
 
-1. **Skills** (`~/.claude/agents/`)
+1. **Agents** (`~/.claude/agents/`)
    - `prd.md` - PRD generation
    - `ralph-converter.md` - PRD to JSON conversion
    - `ralph-run.md` - Autonomous execution engine
@@ -27,7 +27,7 @@ Ralph consists of three main components:
 ### Execution Flow
 
 ```
-User runs /ralph-run
+User runs @ralph-run
   ↓
 Read prd.json + progress.txt
   ↓
@@ -115,9 +115,9 @@ Started: [timestamp]
 - Selection algorithm uses `priority` and `passes`
 - Validated by hooks to prevent corruption
 
-## Skills Deep Dive
+## Agents Deep Dive
 
-### /prd Skill
+### @prd Agent
 
 **Model:** opus (better planning)
 **Purpose:** Generate structured PRDs from natural language
@@ -161,7 +161,7 @@ Started: [timestamp]
 ...
 ```
 
-### /ralph-converter Skill
+### @ralph-converter Agent
 
 **Model:** opus (better structured conversion)
 **Purpose:** Convert markdown PRDs to prd.json format
@@ -187,7 +187,7 @@ Started: [timestamp]
 3. UI components
 4. Aggregation/dashboards
 
-### /ralph-run Skill
+### @ralph-run Agent
 
 **Model:** sonnet (optimized for implementation)
 **Purpose:** Autonomous execution engine
@@ -564,12 +564,12 @@ Any story with "Verify in browser" in acceptance criteria.
 - Claude waiting for user input
 
 **Fix:**
-1. Check `/ralph-run` skill contains:
+1. Check `@ralph-run` agent contains:
    ```markdown
    ## Critical: Autonomous Continuation
    After completing each story, **DO NOT WAIT** for user input.
    ```
-2. Verify skill uses `model: sonnet` (not opus)
+2. Verify agent uses `model: sonnet` (not opus)
 3. Restart Ralph session
 
 ### Hooks Not Firing
@@ -703,11 +703,11 @@ Run multiple Ralph instances in separate branches:
 ```bash
 # Terminal 1
 cd project && git checkout -b ralph/feature-a
-# Run /ralph-run with prd-feature-a.json
+# Run @ralph-run with prd-feature-a.json
 
 # Terminal 2
 cd project && git checkout -b ralph/feature-b
-# Run /ralph-run with prd-feature-b.json
+# Run @ralph-run with prd-feature-b.json
 ```
 
 **Note:** Ensure features don't conflict (different files/areas)

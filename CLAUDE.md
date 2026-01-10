@@ -17,11 +17,11 @@ cp ~/.claude/agents/ralph-run.md ~/.claude/agents/
 # 2. In your project, copy hooks
 cp -r .claude/ /path/to/your/project/
 
-# 3. Use the skills
+# 3. Use the agents
 claude
-/prd create your feature
-/ralph-converter convert tasks/prd-feature.md
-/ralph-run
+@prd create your feature
+@ralph-converter convert tasks/prd-feature.md
+@ralph-run
 ```
 
 ## Commands
@@ -95,17 +95,17 @@ Ralph uses Claude Code hooks for deterministic control:
 
 ## Workflow
 
-1. **Create PRD**: `/prd create your feature`
+1. **Create PRD**: `@prd create your feature`
    - Asks clarifying questions
    - Generates structured markdown PRD
    - Saves to `tasks/prd-[feature-name].md`
 
-2. **Convert to JSON**: `/ralph-converter convert tasks/prd-feature.md`
+2. **Convert to JSON**: `@ralph-converter convert tasks/prd-feature.md`
    - Breaks into small user stories
    - Orders by dependency (schema → backend → UI)
    - Creates `prd.json` with all stories marked `passes: false`
 
-3. **Run Ralph**: `/ralph-run`
+3. **Run Ralph**: `@ralph-run`
    - Reads prd.json and progress.txt
    - Picks highest priority story where `passes: false`
    - Implements story
@@ -177,7 +177,7 @@ project/
 ## Troubleshooting
 
 ### Ralph stops after each story
-- Check `/ralph-run` skill has self-continuation instructions
+- Check `@ralph-run` agent has self-continuation instructions
 - Verify skill uses `model: sonnet` (not opus)
 - Restart Ralph session
 
