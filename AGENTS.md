@@ -1,6 +1,6 @@
 # Ralph Configuration for Claude Code
 
-> **Note:** This CLAUDE.md file is automatically read by Claude Code at the start of every conversation. It provides essential context about the Ralph autonomous agent system.
+> **Note:** This AGENTS.md file is automatically read by Claude Code at the start of every conversation. It provides essential context about the Ralph autonomous agent system.
 
 ## Overview
 
@@ -67,7 +67,7 @@ cat progress.txt
 - Typecheck required for all stories
 - Tests run if project defines them
 - Browser verification for UI stories
-- Subdirectory CLAUDE.md files updated with discovered patterns
+- Subdirectory AGENTS.md files updated with discovered patterns
 - Hooks enforce validation and commit format
 
 ## Hooks System
@@ -141,25 +141,25 @@ Context: [Brief context]
 ---
 ```
 
-## Hierarchical CLAUDE.md System
+## Hierarchical AGENTS.md System
 
-After editing files, Ralph creates or updates CLAUDE.md files in relevant subdirectories with valuable learnings.
+After editing files, Ralph creates or updates AGENTS.md files in relevant subdirectories with valuable learnings.
 
 **How It Works:**
-- Claude Code automatically loads subdirectory CLAUDE.md files when accessing files in those directories
+- Claude Code automatically loads subdirectory AGENTS.md files when accessing files in those directories
 - Creates a hierarchical memory system: root config + directory-specific patterns
-- Example: `src/CLAUDE.md` loads when editing `src/components/Button.tsx`
+- Example: `src/AGENTS.md` loads when editing `src/components/Button.tsx`
 
-**When to update subdirectory CLAUDE.md:**
+**When to update subdirectory AGENTS.md:**
 
-**Good subdirectory CLAUDE.md additions:**
+**Good subdirectory AGENTS.md additions:**
 - "When modifying X, also update Y to keep them in sync"
 - "This module uses pattern Z for all API calls"
 - "Components in this directory use the observer pattern"
 - "Tests require environment variable FOO set"
 
-**Don't add to subdirectory CLAUDE.md:**
-- General project-wide patterns (those go in root CLAUDE.md)
+**Don't add to subdirectory AGENTS.md:**
+- General project-wide patterns (those go in root AGENTS.md)
 - Story-specific implementation details
 - Temporary debugging notes
 - Information already in progress.txt
@@ -167,11 +167,11 @@ After editing files, Ralph creates or updates CLAUDE.md files in relevant subdir
 **File Hierarchy Example:**
 ```
 project/
-├── CLAUDE.md              # Root config (this file)
+├── AGENTS.md              # Root config (this file)
 └── src/
-    ├── CLAUDE.md          # Source-specific patterns
+    ├── AGENTS.md          # Source-specific patterns
     └── components/
-        └── CLAUDE.md      # Component-specific patterns
+        └── AGENTS.md      # Component-specific patterns
 ```
 
 ## Troubleshooting

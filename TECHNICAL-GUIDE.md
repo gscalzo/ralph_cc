@@ -42,7 +42,7 @@ Checkout/create git branch
 │  ↓                              │
 │  Run quality checks             │
 │  ↓                              │
-│  Update subdirectory CLAUDE.md  │
+│  Update subdirectory AGENTS.md  │
 │  ↓                              │
 │  Commit changes                 │
 │  ↓                              │
@@ -475,24 +475,24 @@ archive/
 │   └── progress.txt
 ```
 
-## Hierarchical CLAUDE.md System
+## Hierarchical AGENTS.md System
 
 ### Purpose
-Ralph creates or updates CLAUDE.md files in relevant subdirectories to document module-specific patterns. Claude Code automatically loads these files when accessing files in those directories, creating a hierarchical memory system.
+Ralph creates or updates AGENTS.md files in relevant subdirectories to document module-specific patterns. Claude Code automatically loads these files when accessing files in those directories, creating a hierarchical memory system.
 
 **How It Works:**
-- **Root CLAUDE.md** - Loaded at conversation start, project-wide configuration
-- **Subdirectory CLAUDE.md** - Loaded on-demand when accessing files in that directory
-- Example: `src/components/CLAUDE.md` loads when editing `src/components/Button.tsx`
+- **Root AGENTS.md** - Loaded at conversation start, project-wide configuration
+- **Subdirectory AGENTS.md** - Loaded on-demand when accessing files in that directory
+- Example: `src/components/AGENTS.md` loads when editing `src/components/Button.tsx`
 
 ### Update Logic
 
 **After editing files:**
 1. Identify directories modified
-2. Check for existing CLAUDE.md in those directories (e.g., `src/CLAUDE.md`)
+2. Check for existing AGENTS.md in those directories (e.g., `src/AGENTS.md`)
 3. Add valuable learnings (not story-specific details)
 
-### Good Subdirectory CLAUDE.md Additions
+### Good Subdirectory AGENTS.md Additions
 
 ```markdown
 ## Database Patterns
@@ -511,26 +511,26 @@ Ralph creates or updates CLAUDE.md files in relevant subdirectories to document 
 - Integration tests use real HTTP calls
 ```
 
-### Bad Subdirectory CLAUDE.md Additions
+### Bad Subdirectory AGENTS.md Additions
 - "Implemented US-001" (story-specific)
 - "Changed priority field" (implementation detail)
 - "Fixed bug in line 42" (temporary debugging)
-- General project patterns (those belong in root CLAUDE.md)
+- General project patterns (those belong in root AGENTS.md)
 
 **Hierarchical Structure:**
 ```
 project/
-├── CLAUDE.md                    # Root config (loaded at startup)
+├── AGENTS.md                    # Root config (loaded at startup)
 ├── src/
-│   ├── CLAUDE.md                # Loaded when accessing src/ files
+│   ├── AGENTS.md                # Loaded when accessing src/ files
 │   └── components/
-│       └── CLAUDE.md            # Loaded when accessing components/ files
+│       └── AGENTS.md            # Loaded when accessing components/ files
 ```
 
 **Memory Precedence:**
 - Files higher in the hierarchy take precedence
 - More specific memories build upon general ones
-- Root CLAUDE.md provides foundation, subdirectories add specificity
+- Root AGENTS.md provides foundation, subdirectories add specificity
 
 ## Browser Verification
 

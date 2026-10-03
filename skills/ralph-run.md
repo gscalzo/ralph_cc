@@ -22,7 +22,7 @@ You are Ralph, an autonomous coding agent that implements user stories from a PR
    - Run typecheck (e.g., `npm run typecheck` or project equivalent)
    - Run tests (e.g., `npm test`)
    - Browser verification (if acceptance criteria includes it)
-   - Update subdirectory CLAUDE.md files with discoveries
+   - Update subdirectory AGENTS.md files with discoveries
 7. **Commit** ALL changes: `feat: [Story ID] - [Story Title]`
 8. **Update** `prd.json` → set `passes: true` for completed story
 9. **Append** progress report to `progress.txt`
@@ -92,7 +92,7 @@ jq -r '.userStories[] |
 **Before starting implementation:**
 - Review "Codebase Patterns" section in progress.txt
 - Understand existing patterns and conventions
-- Check subdirectory CLAUDE.md files in relevant directories
+- Check subdirectory AGENTS.md files in relevant directories
 
 **During implementation:**
 - Keep changes focused and minimal
@@ -126,21 +126,21 @@ npm run lint || pnpm lint || yarn lint
 - Verify UI changes work as expected
 - Note verification results in progress log
 
-### 5. Update Subdirectory CLAUDE.md Files
+### 5. Update Subdirectory AGENTS.md Files
 
-Before committing, check if you discovered learnings worth preserving in subdirectory CLAUDE.md files:
+Before committing, check if you discovered learnings worth preserving in subdirectory AGENTS.md files:
 
 1. Identify directories with edited files
-2. Check for existing CLAUDE.md in those directories (e.g., `src/CLAUDE.md`, `src/components/CLAUDE.md`)
+2. Check for existing AGENTS.md in those directories (e.g., `src/AGENTS.md`, `src/components/AGENTS.md`)
 3. Add valuable learnings:
    - Patterns specific to that module
    - Gotchas or non-obvious requirements
    - Dependencies between files
    - Testing approaches
 
-**Note:** Claude Code automatically loads subdirectory CLAUDE.md files when accessing files in those directories. This creates a hierarchical memory system where specific directories can have their own context.
+**Note:** Claude Code automatically loads subdirectory AGENTS.md files when accessing files in those directories. This creates a hierarchical memory system where specific directories can have their own context.
 
-**Good subdirectory CLAUDE.md additions:**
+**Good subdirectory AGENTS.md additions:**
 - "When modifying X, also update Y to keep them in sync"
 - "This module uses pattern Z for all API calls"
 - "Tests require environment variable FOO set"
@@ -150,7 +150,7 @@ Before committing, check if you discovered learnings worth preserving in subdire
 - Story-specific implementation details
 - Temporary debugging notes
 - Information already in progress.txt
-- General project-wide patterns (those go in root CLAUDE.md)
+- General project-wide patterns (those go in root AGENTS.md)
 
 ### 6. Commit Changes
 
@@ -343,7 +343,7 @@ You don't need to handle archiving manually - it's handled when you initialize.
 - **Commit frequently** - one commit per story
 - **Keep CI green** - broken code compounds across iterations
 - **Read "Codebase Patterns"** before EACH story to stay oriented
-- **Update subdirectory CLAUDE.md files** when you discover valuable patterns
+- **Update subdirectory AGENTS.md files** when you discover valuable patterns
 - **Use TodoWrite tool** to track current story progress if helpful
 - **Be autonomous** - don't ask for user input between stories unless blocked
 

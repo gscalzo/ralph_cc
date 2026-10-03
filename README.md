@@ -16,7 +16,7 @@ Ralph solves the context window problem for large features by breaking work into
 - 🤖 **Autonomous execution** - Runs continuously until all PRD items complete
 - ✅ **Quality gates** - Enforces typecheck, tests, and browser verification
 - 🔒 **Validation hooks** - Prevents corrupted task lists and ensures commit format
-- 📝 **Learning system** - Captures patterns in progress.txt and hierarchical CLAUDE.md files
+- 📝 **Learning system** - Captures patterns in progress.txt and hierarchical AGENTS.md files
 - 🎯 **Small, focused stories** - Each completable in one iteration
 
 ## Prerequisites
@@ -114,7 +114,7 @@ Ralph will now run autonomously:
 2. ✅ Pick highest priority story where `passes: false`
 3. ✅ Implement that story
 4. ✅ Run quality checks (typecheck, tests)
-5. ✅ Update subdirectory CLAUDE.md files with discoveries
+5. ✅ Update subdirectory AGENTS.md files with discoveries
 6. ✅ Commit: `feat: [Story ID] - [Story Title]`
 7. ✅ Update prd.json (`passes: true`)
 8. ✅ Append to progress.txt
@@ -142,11 +142,11 @@ your-project/
 │   └── 2026-01-08-feature-name/
 │       ├── prd.json
 │       └── progress.txt
-├── CLAUDE.md                  # Root configuration (auto-read by Claude Code)
+├── AGENTS.md                  # Root configuration (auto-read by Claude Code)
 └── src/                       # Your code
-    ├── CLAUDE.md              # Subdirectory patterns (auto-loaded on access)
+    ├── AGENTS.md              # Subdirectory patterns (auto-loaded on access)
     └── components/
-        └── CLAUDE.md          # Component-specific patterns (auto-loaded)
+        └── AGENTS.md          # Component-specific patterns (auto-loaded)
 ```
 
 ## Key Files
@@ -210,23 +210,23 @@ Ralph uses Claude Code hooks for deterministic control:
 - Runs when Ralph stops
 - Shows completed/pending story counts
 
-### Hierarchical CLAUDE.md Files
+### Hierarchical AGENTS.md Files
 
-Ralph creates or updates `CLAUDE.md` files in relevant subdirectories with module-specific learnings. Claude Code automatically loads these files when accessing files in those directories.
+Ralph creates or updates `AGENTS.md` files in relevant subdirectories with module-specific learnings. Claude Code automatically loads these files when accessing files in those directories.
 
 **Hierarchical Memory System:**
-- `CLAUDE.md` (root) - Project-wide configuration, loaded at startup
-- `src/CLAUDE.md` - Loaded when accessing files in src/
-- `src/components/CLAUDE.md` - Loaded when accessing components/
+- `AGENTS.md` (root) - Project-wide configuration, loaded at startup
+- `src/AGENTS.md` - Loaded when accessing files in src/
+- `src/components/AGENTS.md` - Loaded when accessing components/
 
-**Examples of what to add to subdirectory CLAUDE.md:**
+**Examples of what to add to subdirectory AGENTS.md:**
 - "This module uses pattern Z for all API calls"
 - "When modifying X, also update Y to keep them in sync"
 - "Components in this directory use the observer pattern"
 - "Tests require environment variable FOO set"
 
 **Do NOT add:**
-- General project-wide patterns (those go in root CLAUDE.md)
+- General project-wide patterns (those go in root AGENTS.md)
 - Story-specific details
 - Temporary debugging notes
 
@@ -412,9 +412,9 @@ cp ~/.claude/agents/ralph-run.md .claude/agents/ralph-run-custom.md
 ### 4. Use Hierarchical Memory
 
 Review Claude Code's hierarchical memory files:
-- **CLAUDE.md (root)** - Project-wide configuration and patterns
+- **AGENTS.md (root)** - Project-wide configuration and patterns
 - **progress.txt** - Historical learnings and codebase patterns
-- **Subdirectory CLAUDE.md** - Module-specific conventions (e.g., `src/CLAUDE.md`)
+- **Subdirectory AGENTS.md** - Module-specific conventions (e.g., `src/AGENTS.md`)
 
 ## Documentation
 
